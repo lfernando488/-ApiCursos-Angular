@@ -23,6 +23,16 @@
         <mat-error *ngIf="form.get('category')?.invalid">{{getErrorMessage("category")}}</mat-error>
       </mat-form-field>
 
+      <mat-form-field  class="full-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="null"></mat-option>
+          <mat-option value="Active">Active</mat-option>
+          <mat-option value="Inactive">Inactive</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('status')?.invalid">{{getErrorMessage("status")}}</mat-error>
+      </mat-form-field>
+
     </form>
   </mat-card-content>
 

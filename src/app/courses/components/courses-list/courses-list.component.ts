@@ -14,7 +14,7 @@ export class CoursesListComponent implements OnInit {
   @Output() edit = new EventEmitter(false);
   @Output() delete = new EventEmitter(false);
 
-  readonly displayedColumns = ['_id', 'name', 'category','actions'];
+  readonly displayedColumns = ['_id', 'name', 'category', 'status', 'actions'];
 
   constructor( private router: Router, private route: ActivatedRoute) { }
 

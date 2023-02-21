@@ -16,7 +16,8 @@ export class CourseFormComponent implements OnInit{
   form = this.formBuilder.group({
     _id: [''],
     name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
-    category: ['',[Validators.required]]
+    category: ['',[Validators.required]],
+    status: ['',[Validators.required]]
   });
 
   constructor(private formBuilder: NonNullableFormBuilder, private courseService: CoursesService,
@@ -25,7 +26,7 @@ export class CourseFormComponent implements OnInit{
   }
   ngOnInit(): void {
     const course: Course = this.route.snapshot.data['course'];
-    this.form.setValue({_id: course._id, name: course.name, category: course.category});
+    this.form.setValue({_id: course._id, name: course.name, category: course.category, status: course.status});
   }
 
   onSubmit(){
